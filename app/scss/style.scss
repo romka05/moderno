@@ -1,0 +1,27 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: "sf-pro-display";
+  src: url("../fonts/SF-Pro-Display-Regular.woff2") format("woff2"),
+    url("../fonts/SF-Pro-Display-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "sf-pro-display";
+  src: url("../fonts/SF-Pro-Display-Bold.woff2") format("woff2"),
+    url("../fonts/SF-Pro-Display-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+}
