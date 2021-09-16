@@ -8,7 +8,7 @@ let gulp = require("gulp"),
   cssmin = require("gulp-cssmin"),
   del = require("del");
 
-  // удаление папки dist 
+// удаление папки dist
 gulp.task("clean", async function () {
   del.sync("dist");
 });
@@ -76,7 +76,7 @@ gulp.task("browser-sync", function () {
   });
 });
 
-//  таск на экспортировку файлов в dist папку 
+//  таск на экспортировку файлов в dist папку
 gulp.task("export", function () {
   let buildHtml = gulp.src("app/**/*.html").pipe(gulp.dest("dist"));
 
@@ -91,7 +91,7 @@ gulp.task("export", function () {
 
 // наблюдения за инзмениями
 gulp.task("watch", function () {
-  gulp.watch("app/scss/style.scss", gulp.parallel("sass"));
+  gulp.watch("app/scss/**/*.scss", gulp.parallel("sass"));
   gulp.watch("app/*.html", gulp.parallel("html"));
   gulp.watch("app/js/*.js", gulp.parallel("js"));
 });
@@ -102,6 +102,5 @@ gulp.task(
   gulp.parallel("style", "script", "sass", "watch", "browser-sync")
 );
 
- 
 // экспорт финал файлов  build
 gulp.task("build", gulp.series("clean", "export"));

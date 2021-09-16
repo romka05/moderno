@@ -1,27 +1,53 @@
-html {
-  box-sizing: border-box;
-}
+@import "vars";
+@import "fonts";
+@import "global";
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+.header__top-inner {
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  align-items: center;
 }
-
-@font-face {
-  font-family: "sf-pro-display";
-  src: url("../fonts/SF-Pro-Display-Regular.woff2") format("woff2"),
-    url("../fonts/SF-Pro-Display-Regular.woff") format("woff");
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
+.header__text {
+  margin-left: auto;
+  margin-right: 50px;
+  span {
+    color: $red;
+  }
 }
-
-@font-face {
-  font-family: "sf-pro-display";
-  src: url("../fonts/SF-Pro-Display-Bold.woff2") format("woff2"),
-    url("../fonts/SF-Pro-Display-Bold.woff") format("woff");
-  font-style: normal;
-  font-weight: bold;
-  font-display: swap;
+.header__btn {
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  padding: 4px;
+  width: 72px;
+  border-radius: 4px;
+  background-color: $text;
+}
+.header__btn-login {
+  background-color: $green;
+}
+.header__btn-register {
+  background-color: $red;
+}
+.header__menu {
+  background-color: $bg;
+}
+.menu {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu__list {
+  li {
+    display: inline-block;
+    & + li {
+      margin-left: 30px;
+    }
+    a {
+      color: #fff;
+      font-size: 14px;
+    }
+  }
 }
