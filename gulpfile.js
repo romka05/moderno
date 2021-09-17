@@ -39,6 +39,7 @@ gulp.task("style", function () {
       "node_modules/normalize.css/normalize.css",
       "node_modules/slick-carousel/slick/slick.css",
       "node_modules/magnific-popup/dist/magnific-popup.css",
+      "app/css/jquery.rateyo.css"
     ])
     .pipe(concat("libs.min.css"))
     .pipe(cssmin())
@@ -50,21 +51,22 @@ gulp.task("style", function () {
 gulp.task("script", function () {
   return (
     gulp
-    .src([
-      "node_modules/slick-carousel/slick/slick.js",
-      "node_modules/magnific-popup/dist/jquery.magnific-popup.js",
-      "node_modules/mixitup/dist/mixitup.js",
-    ])
-    .pipe(concat("libs.min.js"))
-    .pipe(uglify())
-    .pipe(gulp.dest("app/js"))
-    .pipe(browserSync.reload({ stream: true })),
+      .src([
+        "node_modules/slick-carousel/slick/slick.js",
+        "node_modules/magnific-popup/dist/jquery.magnific-popup.js",
+        "node_modules/mixitup/dist/mixitup.js",
+        "app/js/jquery.rateyo.js"
+      ])
+      .pipe(concat("libs.min.js"))
+      .pipe(uglify())
+      .pipe(gulp.dest("app/js"))
+      .pipe(browserSync.reload({ stream: true })),
     gulp
-    .src(["app/js/main.js"])
-    .pipe(uglify())
-    .pipe(rename({ suffix: ".min" }))
-    .pipe(gulp.dest("app/js"))
-    .pipe(browserSync.reload({ stream: true }))
+      .src(["app/js/main.js"])
+      .pipe(uglify())
+      .pipe(rename({ suffix: ".min" }))
+      .pipe(gulp.dest("app/js"))
+      .pipe(browserSync.reload({ stream: true }))
   );
 });
 
@@ -75,6 +77,7 @@ gulp.task("html", function () {
 gulp.task("js", function () {
   return gulp.src("app/js/*.js").pipe(browserSync.reload({ stream: true }));
 });
+
 
 // браузерсинк следит за изменениями в папке app и обновляет
 gulp.task("browser-sync", function () {
@@ -102,7 +105,7 @@ gulp.task("export", function () {
 gulp.task("watch", function () {
   gulp.watch("app/scss/**/*.scss", gulp.parallel("sass"));
   gulp.watch("app/*.html", gulp.parallel("html"));
-  gulp.watch("app/js/*.js", gulp.parallel("js"));
+  gulp.watch("app/js/**/*.js", gulp.parallel("js"));
 });
 
 // запуск по дефолту паралелей тасков: препроцессор потом слежка за обновлением потом обновление браузерсинком
