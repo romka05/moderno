@@ -68,13 +68,13 @@
     &-title {
       margin-bottom: 10px;
       font-size: 48px;
-      font-weight: 700;
+      @include f700;
       line-height: 72px;
     }
     &-text {
       font-size: 20px;
       margin-bottom: 50px;
-      font-weight: 500;
+      @include f500;
       line-height: 30px;
     }
     &-form {
@@ -91,12 +91,12 @@
         border: none;
         outline: none;
         font-size: 14px;
-        font-weight: 500;
+        @include f500;
         padding-left: 25px;
         padding-right: 60px;
         &::placeholder {
           color: #90a4ae;
-          font-weight: 500;
+          @include f500;
           display: block;
         }
       }
@@ -122,7 +122,7 @@
   text-align: center;
   margin-bottom: 60px;
   font-size: 14px;
-  font-weight: 500;
+  @include f500;
   button {
     padding: 12px 21px;
     border: none;
@@ -157,7 +157,7 @@
   &-title {
     color: $bg;
     font-size: 18px;
-    font-weight: 500;
+    @include f500;
     display: block;
   }
   &-category {
@@ -171,11 +171,11 @@
     padding: 10px 30px;
     min-height: 90px;
     align-items: center;
-    font-weight: 500;
+    @include f500;
     border-bottom: 1px solid #e7ecf2;
   }
   &-price {
-    font-weight: 700;
+    @include f700;
     font-size: 20px;
   }
   &-info {
@@ -191,7 +191,7 @@
     max-width: 250px;
     span {
       font-size: 14px;
-      font-weight: 500;
+      @include f500;
     }
     .avatar {
       width: 30px;
@@ -230,11 +230,9 @@
       background-color: $red;
       color: #fff;
     }
-    
   }
-  
 }
-// end products 
+// end products
 
 // start product-slider
 .product-slider {
@@ -242,7 +240,7 @@
   .slick-dots {
     text-align: center;
     margin-top: 50px;
-    li{
+    li {
       display: inline-block;
       margin-left: 3px;
       margin-right: 3px;
@@ -253,17 +251,85 @@
       }
       button {
         border-radius: 50%;
-       background-color: rgb(232, 232, 232);
-       border: none;
-       font-size: 0;
-       width: 16px;
-       height: 16px;
-       cursor: pointer;
-       outline: none;
+        background-color: rgb(232, 232, 232);
+        border: none;
+        font-size: 0;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        outline: none;
       }
     }
   }
 }
 
-
 // end product-slider
+
+// start section advantages
+
+.advanteges {
+  background-color: $bg;
+  padding: 100px 0;
+  &__title {
+    color: #fff;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    max-width: 370px;
+    text-align: center;
+    padding: 0 15px;
+
+    &:hover {
+      .advanteges__item-images {
+        background-color: $green;
+        g {
+          fill: #fff;
+        }
+      }
+      .advanteges__item-title {
+        color: $green;
+      }
+    }
+    &-images {
+      width: 114px;
+      height: 114px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 30px;
+      transition: all 0.5s;
+    }
+    &-title {
+      margin-bottom: 25px;
+      color: #fff;
+      @include f500;
+      font-size: 24px;
+      transition: all 0.5s;
+    }
+    &-text {
+      font-size: 15px;
+    }
+  }
+  .icosvg-1 {
+    svg {
+      width: 100px;
+    }
+  }
+  .icosvg-2 {
+    svg {
+      width: 70px;
+    }
+  }
+  .icosvg-3 {
+    svg {
+      width: 76px;
+    }
+  }
+}
+
+// end section advantages
