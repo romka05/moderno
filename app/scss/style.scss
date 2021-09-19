@@ -333,3 +333,73 @@
 }
 
 // end section advantages
+
+// start section authors
+.authors {
+  max-width: 1914px;
+  min-height: 761px;
+  padding: 0 5px;
+  position: relative;
+  &__inner {
+    width: 100%;
+    min-height: 740px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &__link {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 70px 60px 80px 70px;
+    max-width: 653px;
+    min-height: 215px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    background-color: $green;
+    &-btn {
+      padding: 25px 45px;
+      background-color: #fff;
+      font-size: 18px;
+    }
+    &-text {
+      max-width: 290px;
+      font-size: 30px;
+      color: #fff;
+      line-height: 36px;
+      span {
+        @include f700;
+      }
+    }
+  }
+}
+
+// end section author
+
+// start tutorial
+.tutorial {
+  padding: 60px 0px 120px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    max-width: 370px;
+    width: 100%;
+    &-images {
+      min-height: 270px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &-title {
+      padding: 30px 10px;
+      @include f700;
+      font-size: 24px;
+      text-align: center;
+      background-color: #f8f8f8;
+    }
+  }
+}
+// end tutorial
