@@ -60,11 +60,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-search:before {
+  content: "\f002";
+}
 .icon-envelope-o:before {
   content: "\f003";
 }
 .icon-user:before {
   content: "\f007";
+}
+.icon-th-large:before {
+  content: "\f009";
 }
 .icon-th-list:before {
   content: "\f00b";
@@ -174,8 +180,8 @@
 .icon-yen:before {
   content: "\f157";
 }
-.icon-sort-amount-asc:before {
-  content: "\f160";
+.icon-sort-amount-desc:before {
+  content: "\f161";
 }
 .icon-foursquare:before {
   content: "\f180";
