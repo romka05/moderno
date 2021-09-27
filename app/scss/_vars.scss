@@ -5,13 +5,18 @@ $bg: #263238;
 $grey: #f4f6f5;
 $yellow: #fcb322;
 $tomato: #ef6c00;
+$blue: #42a5f5;
 
 @mixin f500 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto-Medium", sans-serif;
   font-weight: 500;
 }
 
 @mixin f700 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto-Bold", sans-serif;
   font-weight: 700;
+}
+@mixin f300 {
+  font-family: "Roboto-Light", sans-serif;
+  font-weight: 300;
 }
