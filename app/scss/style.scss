@@ -173,6 +173,7 @@
   transition: all 0.3s;
   height: 0;
   overflow: hidden;
+  z-index: 1;
 
   a {
     font-size: 12px;
@@ -494,6 +495,11 @@
 // end search
 
 // start products
+.products__wrapper,
+.product-slider__wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
 .products {
   padding: 110px 0px 110px;
   background-color: $grey;
@@ -517,6 +523,10 @@
       color: #fff;
     }
   }
+}
+.products .product__item {
+  flex-basis: calc(25% - 30px);
+  margin-left: 30px;
 }
 .product__item {
   max-width: 442px;
@@ -593,7 +603,8 @@
 }
 .products__inner-box {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  margin-left: -30px;
   flex-wrap: wrap;
 }
 .products__bottom-btn {
@@ -715,46 +726,41 @@
 // end section advantages
 
 // start section authors
-.authors {
-  max-width: 1914px;
-  min-height: 761px;
-  padding: 0 5px;
-  position: relative;
-  &__inner {
+
+.author {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__box {
+    max-width: 650px;
     width: 100%;
-    min-height: 740px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  &__link {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    padding: 70px 60px 80px 70px;
-    max-width: 653px;
     min-height: 215px;
     display: flex;
-    justify-content: space-between;
-    position: absolute;
+    align-items: center;
+    justify-content: center;
     background-color: $green;
-    &-btn {
-      padding: 25px 45px;
-      background-color: #fff;
-      font-size: 18px;
-    }
-    &-text {
-      max-width: 290px;
-      font-size: 30px;
-      color: #fff;
-      line-height: 36px;
-      span {
-        @include f700;
-      }
+  }
+  &__title {
+    font-size: 30px;
+    line-height: 30px;
+    color: #fff;
+    margin-right: 45px;
+    max-width: 260px;
+    span {
+      @include f700;
     }
   }
+  &__link {
+    font-size: 18px;
+    line-height: 36px;
+    padding: 14px 40px;
+    background-color: #fff;
+  }
 }
-
 // end section author
 
 // start tutorial
@@ -956,7 +962,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 18px 0;
+  padding: 18px;
 }
 .product-one__images {
   max-width: 829px;
@@ -1132,7 +1138,8 @@
   border: 1px solid #dedede;
   padding: 0px 32px 15px;
   margin-bottom: 30px;
-  width: 270px;
+  max-width: 270px;
+  width: 100%;
 }
 .aside__title {
   border-bottom: 1px solid #dde3e8;
@@ -1339,7 +1346,7 @@
   border: 1px solid #dedede;
   padding: 0px 32px 32px;
   margin-bottom: 30px;
-  width: 270px;
+  max-width: 270px;
 }
 .aside__title {
   border-bottom: 1px solid #dde3e8;
@@ -1970,7 +1977,8 @@ button.icon-unsorted {
   label {
     font-size: 15px;
     color: #444444;
-    width: 260px;
+    max-width: 260px;
+    width: 100%;
   }
   input {
     max-width: 540px;
@@ -2000,6 +2008,7 @@ button.icon-unsorted {
     text-align: center;
     color: #ffff;
     @include f500;
+    margin-left: 260px;
   }
 }
 // end settings
